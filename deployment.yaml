@@ -2,16 +2,16 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-deployment
-  labes:  
+  labels:  
     app: my-golang-deploy
 spec: 
   selector: 
-    mathcLables:
+    mathcLabels:
       progect: golang   
   template:
     metadata:
-      labes: 
-        progect: golang
+      labels: 
+        project: golang
     spec:
       containers: 
         - name: golang-web
