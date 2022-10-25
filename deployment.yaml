@@ -6,8 +6,8 @@ metadata:
     app: my-golang-deploy
 spec: 
   selector: 
-    mathcLabels:
-      progect: golang   
+    matchLabels:
+      project: golang   
   template:
     metadata:
       labels: 
