@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-deployment
+  labes:  
+    app: my-golang-deploy
+spec: 
+  selector: 
+    mathcLables:
+      progect: golang   
+  template:
+    metadata:
+      labes: 
+        progect: golang
+    spec:
+      containers: 
+        - name: golang-web
+          image: marina1327/task-01:latest
+          ports:
+            - containerPort: 8080 
