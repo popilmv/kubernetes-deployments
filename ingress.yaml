@@ -14,7 +14,7 @@ spec:
         path: /hello
         backend:
           service:
-            name: my-deploy-service  
+            name: my-pod-service  
             port: 
               number: 8080
 
