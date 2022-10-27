@@ -40,4 +40,4 @@ spec:
     - name: go-listen
       protocol: TCP
       port: 80 #port in loadbalanser 
-      targetPort: 80 #port in pods
+      targetPort: 8080 #port in pods

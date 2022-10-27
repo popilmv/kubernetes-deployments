@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+  labels:
+    name: my-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: 1327.com.ua
+    http:
+      paths:
+      - pathType: Prefix
+        path: /hello
+        backend:
+          service:
+            name: my-deploy-service  
+            port: 
+              number: 8080
+
+          
+          
+          
