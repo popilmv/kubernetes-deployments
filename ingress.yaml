@@ -7,16 +7,16 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: 1327.com.ua
+  - host: m.int.itoutposts.com
     http:
       paths:
       - pathType: Prefix
-        path: /hello
+        path: /
         backend:
           service:
             name: my-pod-service  
             port: 
-              number: 8080
+              number: 80
 
           
           

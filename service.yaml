@@ -6,7 +6,7 @@ spec:
   selector:
     project: golang #select pods with this labels in template 
   ports:
-    - name: go-listen
+    - name: http
       protocol: TCP
       port: 80 #port in loadbalanser 
       targetPort: 8080 #port in pods
