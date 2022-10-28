@@ -15,5 +15,4 @@ service:
 
 ingress:
   host: m.int.itoutposts.com
-  port: 
-    number: 80
+

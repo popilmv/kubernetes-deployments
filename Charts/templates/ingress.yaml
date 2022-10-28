@@ -19,10 +19,10 @@ spec:
           service:
             name: my-pod-service  
             port: 
-              number: {{ .Values.ingress.port.number }}
+              number: {{ .Values.service.ports.port }}
   tls:
   - hosts:
-    - m.int.itoutposts.com
+    - {{ .Values.ingress.host}}
     secretName: ssl-lets
 
           
