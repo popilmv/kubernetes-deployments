@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment.name }}
+  namespase: {{ .Values.namespase}}
+  labels:  
+    app: my-golang-deploy
+spec: 
+  selector: 
+    matchLabels:
+      project: golang   
+  template:
+    metadata:
+      labels: 
+        project: golang
+    spec:
+      containers: 
+        - name: golang-web
+          image: {{ .Values.deployment.containers.image }}
+          ports:
+            - containerPort: {{ .Values.deployment.containers.ports.containerPort }}

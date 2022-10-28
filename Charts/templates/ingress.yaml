@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: my-ingress
+  namespase: {{ .Values.namespase}}
   labels:
     name: my-ingress
   annotations:
@@ -9,7 +10,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: m.int.itoutposts.com
+  - host: {{ .Values.ingress.host}}
     http:
       paths:
       - pathType: Prefix
@@ -18,7 +19,7 @@ spec:
           service:
             name: my-pod-service  
             port: 
-              number: 80
+              number: {{ .Values.ingress.port.number }}
   tls:
   - hosts:
     - m.int.itoutposts.com
