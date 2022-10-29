@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service 
+metadata: 
+  name: {{ .Release.Name }}-service
+spec: 
+  selector:
+    project: golang #select pods with this labels in template 
+  ports:
+    - name: http
+      protocol: TCP
+      port: {{ .Values.service.ports.port }} #port in loadbalanser 
+      targetPort: {{ .Values.service.ports.targetPort }} #port in pods
