@@ -1,15 +1,15 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: my-ingress27
+  name: my-ingress1327
   labels:
-    name: my-ingress27
+    name: my-ingress1327
   annotations:
     cert-manager.io/issuer: letsencrypt
 spec:
   ingressClassName: nginx
   rules:
-  - host: m.int.itoutposts.com
+  - host: m1327.int.itoutposts.com
     http:
       paths:
       - pathType: Prefix
