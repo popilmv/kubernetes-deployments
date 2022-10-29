@@ -13,3 +13,8 @@ kubectl apply -f service.yaml -n app
 kubectl apply -f ingress.yaml -n app
 ```
 
+For working with **FluxCD** - go to [Installation guide](https://fluxcd.io/flux/installation/#install-the-flux-cli) 
+For bash i use this:
+```
+curl -s https://fluxcd.io/install.sh | sudo bash
+```
