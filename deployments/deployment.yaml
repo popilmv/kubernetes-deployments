@@ -5,6 +5,7 @@ metadata:
   namespace: app
   labels:  
     app: my-golang-deploy
+    release: beta
 spec: 
   selector: 
     matchLabels:
