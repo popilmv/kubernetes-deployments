@@ -11,5 +11,5 @@ spec:
     alphabetical:
       order: asc
   filterTags:
-    pattern: '^(staging)-\d.*'
+    pattern: '^stg-\d{1,2}\.\d{1,2}\.\d{1,2}'
 ---
