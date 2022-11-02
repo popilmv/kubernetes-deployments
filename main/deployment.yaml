@@ -17,6 +17,6 @@ spec:
     spec:
       containers: 
         - name: golang-web
-          image: marina1327/task-01:latest
+          image: marina1327/task-01:latest # {"$imagepolicy": "flux-system:main"}
           ports:
             - containerPort: 8080 
