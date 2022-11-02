@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service 
 metadata: 
   name: my-pod-service 
-  namespace: app
+  namespace: flux-main
 spec: 
   selector:
     project: golang #select pods with this labels in template 
