@@ -1,7 +1,7 @@
 apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageUpdateAutomation
 metadata:
-  name: flux-system
+  name: flux-main-system
   namespace: flux-system
 spec:
   interval: 1m0s
@@ -21,4 +21,54 @@ spec:
       branch: main
   update:
     path: ./main
+    strategy: Setters
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageUpdateAutomation
+metadata:
+  name: flux-dev-system
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  sourceRef:
+    kind: GitRepository
+    name: flux-dev
+  git:
+    checkout:
+      ref:
+        branch: dev
+    commit:
+      author:
+        email: m.popil@itoutposts.com
+        name: popilmv
+      messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
+    push:
+      branch: dev
+  update:
+    path: ./dev
+    strategy: Setters
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageUpdateAutomation
+metadata:
+  name: flux-stg
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  sourceRef:
+    kind: GitRepository
+    name: flux-stg
+  git:
+    checkout:
+      ref:
+        branch: stg
+    commit:
+      author:
+        email: m.popil@itoutposts.com
+        name: popilmv
+      messageTemplate: '{{range .Updated.Images}}{{println .}}{{end}}'
+    push:
+      branch: stg
+  update:
+    path: ./stg
     strategy: Setters
