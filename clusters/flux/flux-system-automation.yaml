@@ -3,7 +3,7 @@ apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageUpdateAutomation
 metadata:
   name: flux-main
-  namespace: flux-system
+  namespace: flux-main
 spec:
   interval: 1m0s
   sourceRef:
@@ -28,7 +28,7 @@ apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageUpdateAutomation
 metadata:
   name: flux-dev
-  namespace: flux-system
+  namespace: flux-dev
 spec:
   interval: 1m0s
   sourceRef:
@@ -53,7 +53,7 @@ apiVersion: image.toolkit.fluxcd.io/v1beta1
 kind: ImageUpdateAutomation
 metadata:
   name: flux-stg
-  namespace: flux-system
+  namespace: flux-stg
 spec:
   interval: 1m0s
   sourceRef:
