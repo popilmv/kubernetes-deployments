@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   imageRepositoryRef:
-    name: task-01
+    name: podinfo
   policy:
     semver:
       range: '>= 1.0.0 <99.99.99'
