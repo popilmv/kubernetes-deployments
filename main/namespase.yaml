@@ -1,6 +1,6 @@
 kind: Namespace
 apiVersion: v1
 metadata:
-  name: app
+  name: flux-main
   labels: 
     name: app 
