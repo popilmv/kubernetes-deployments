@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Dev
+metadata:
+  name: my-dev
+  namespace: flux-system
+  labels:  
+    app: my-golang-dev
+    release: beta
+spec: 
+  selector: 
+    matchLabels:
+      project: golang   
+  template:
+    metadata:
+      labels: 
+        project: golang
+    spec:
+      containers: 
+        - name: golang-web
+          image: marina1327/task-01:latest
+          ports:
+            - containerPort: 8080 

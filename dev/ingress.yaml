@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress13
+  namespace: flux-system
+  labels:
+    name: my-ingress13
+  annotations:
+    cert-manager.io/issuer: letsencrypt
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: dev-m.int.itoutposts.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: my-pod-service  
+            port: 
+              number: 80
+  tls:
+  - hosts:
+    - dev-m.int.itoutposts.com
+    secretName: ssl-lets
+
+          
+          
+          
