@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: m1327.int.itoutposts.com
+  - host: main-m.int.itoutposts.com
     http:
       paths:
       - pathType: Prefix
@@ -22,7 +22,7 @@ spec:
               number: 80
   tls:
   - hosts:
-    - m.int.itoutposts.com
+    - main-m.int.itoutposts.com
     secretName: ssl-lets
 
           
