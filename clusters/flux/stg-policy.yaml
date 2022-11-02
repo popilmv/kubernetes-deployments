@@ -8,6 +8,8 @@ spec:
   imageRepositoryRef:
     name: podinfo
   policy:
-    semver:
-      range: '>= stg-1.0.0 <stg-99.99.99'
+    alphabetical:
+      order: asc
+  filterTags:
+    pattern: '^(staging)-\d.*'
 ---
