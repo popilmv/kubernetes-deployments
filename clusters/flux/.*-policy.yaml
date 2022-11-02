@@ -1,10 +1,13 @@
 ---
 apiVersion: image.toolkit.fluxcd.io/v1beta1
-kind: ImageRepository
+kind: ImagePolicy
 metadata:
   name: podinfo
   namespace: flux-system
 spec:
-  image: docker.io/marina1327/task-01
-  interval: 1m0s
+  imageRepositoryRef:
+    name: podinfo
+  policy:
+    semver:
+      range: 1.x.x
 
