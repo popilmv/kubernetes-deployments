@@ -2,21 +2,21 @@ apiVersion: apps/v1
 kind: Dev
 metadata:
   name: my-dev
-  namespace: flux-system
-  labels:  
-    app: my-golang-dev
+  namespace: app
+  labels:
+    app: my-golang-deploy
     release: beta
-spec: 
-  selector: 
+spec:
+  selector:
     matchLabels:
-      project: golang   
+      project: golang
   template:
     metadata:
-      labels: 
+      labels:
         project: golang
     spec:
-      containers: 
+      containers:
         - name: golang-web
-          image: marina1327/task-01:latest # {"$imagepolicy": "flux-system:dev"}
+          image: docker.io/marina1327/task-01:1.28.29 # {"$imagepolicy": "flux-system:main"}
           ports:
-            - containerPort: 8080 
+            - containerPort: 8080
