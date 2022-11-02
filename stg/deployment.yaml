@@ -3,20 +3,20 @@ kind: Deployment
 metadata:
   name: my-stg
   namespace: flux-stg
-  labels:  
+  labels:
     app: my-golang-stg
     release: beta
-spec: 
-  selector: 
+spec:
+  selector:
     matchLabels:
-      project: golang   
+      project: golang
   template:
     metadata:
-      labels: 
+      labels:
         project: golang
     spec:
-      containers: 
+      containers:
         - name: golang-web
-          image: docker.io/marina1327/task-01:latest # {"$imagepolicy": "flux-system:stg"}
+          image: docker.io/marina1327/task-01:stg-1.28.7 # {"$imagepolicy": "flux-system:stg"}
           ports:
-            - containerPort: 8080 
+            - containerPort: 8080
