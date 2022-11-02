@@ -52,6 +52,19 @@ spec:
     kind: GitRepository
     name: flux-main
 ---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: flux-stage
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  ref:
+    branch: stg
+  secretRef:
+    name: flux-system
+  url: https://github.com/popilmv/kubernetes-deployments.git
+---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
@@ -63,7 +76,20 @@ spec:
   prune: true
   sourceRef:
     kind: GitRepository
-    name: flux-stage
+    name: flux-stage    
+---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: flux-dev
+  namespace: flux-system
+spec:
+  interval: 1m0s
+  ref:
+    branch: dev
+  secretRef:
+    name: flux-system
+  url: https://github.com/popilmv/kubernetes-deployments.git
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
