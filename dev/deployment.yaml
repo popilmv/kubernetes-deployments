@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: my-dev
-  namespace: app
+  namespace: flux-system
   labels:
     app: my-golang-deploy
     release: beta
