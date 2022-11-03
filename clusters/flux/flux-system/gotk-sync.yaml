@@ -104,7 +104,7 @@ spec:
     kind: GitRepository
     name: flux-dev
 ---
-piVersion: source.toolkit.fluxcd.io/v1beta2
+apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: GitRepository
 metadata:
   name: react-app
