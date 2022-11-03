@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: golang-web
-          image: docker.io/marina1327/task-01:1.28.30 # {"$imagepolicy": "flux-system:main"}
+          image: docker.io/marina1327/task-01:13.13.13 # {"$imagepolicy": "flux-system:main"}
           ports:
             - containerPort: 8080
