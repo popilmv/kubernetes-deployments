@@ -1,4 +1,3 @@
-13
 # kubernetes-deployments
 Precontition: 
 1. You must have a cluster in Google Cloud
